@@ -1,0 +1,63 @@
+<div class="breadcrumb">
+    <h1>Create Slider List</h1>
+    
+</div>
+
+<div class="separator-breadcrumb border-top"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="flex-5" style="position: relative;">
+                        <input type="file"class="custom-file-input" accept="image/*" id="photo" (change)="onFileSelected($event)" style="margin-left: 15px;">
+                        <label class="custom-file-label" for="photo" style="top: 50%; t7ransform: translate(0, -50%);">{{chooseFileName}}</label>
+                        <label class="feedback-error" *ngIf="fileType">You must choose image files</label>
+                    </div>
+                    <div class="flex-2"></div>
+                    <div class="flex-5">
+                        <span *ngIf="editPicture">
+                            <img src="{{this.editPictureData.picture}}" alt="no image found">
+                        </span>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <button class="btn btn-primary" (click)="GetAllImages()">Get Images</button>
+        </div>
+        <br>
+        <div class="row">
+            <div class="flex-2 padding-15" style="padding-left: 15px; padding-right: 15px;" *ngFor="let i of imagesList">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="list-thumb d-flex" style="height: 190px;">
+                            <!-- <img src="assets/images/market/1.jpg"> -->
+                            <img [src]="i.picture" alt="No Image Found">
+                        </div>
+                        <div class="mt-1 p-1 border  d-flex  border-light rounded align-items-center text-center ">
+                            <div class="flex-6">
+                                <div class="align-items-center text-center ">
+                                    <div class="dropdown show">
+                                        <a class="btn btn-success btn-customize" style="color: #fff; line-height: 10px;" (click)="EditImage(i._id)">Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-6">
+                                <div class="align-items-center text-center ">
+                                    <div class="dropdown show">
+                                        <a class="btn btn-success btn-customize" style="color: #fff; line-height: 10px;" (click)="DeleteImage(i._id)">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

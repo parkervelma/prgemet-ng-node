@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { AboutComponent } from './about/about.component';
 import { UploadDummyComponent } from './upload-dummy/upload-dummy.component';
+import { SliderManagementComponent } from './slider-management/slider-management.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { UploadDummyComponent } from './upload-dummy/upload-dummy.component';
     HttpClientModule,
     FileUploadModule,
     MultiselectDropdownModule,
+    SliderManagementComponent
   ],
   declarations: [ AboutComponent, UploadDummyComponent]
 })

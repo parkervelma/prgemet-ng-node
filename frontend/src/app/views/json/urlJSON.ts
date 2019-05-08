@@ -29,4 +29,11 @@ export const UrlJSON = {
   uploadPictureToMongoUrl: base_url + 'api/uploadPictureToMongoose',
 
   addRFSUrl: base_url + 'api/addRFS',
+
+  addImage: base_url + 'api/addImage',
+  uploadPicture: base_url + 'api/uploadPicture',
+  getImagesUrl: base_url + 'api/getImages',
+  removeImageUrl: base_url + 'api/removeImage',
+  getImageByIdUrl: base_url + 'api/getImageById',
+  updateImageUrl: base_url + 'api/updateImage',
 };

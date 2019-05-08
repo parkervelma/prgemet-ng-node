@@ -14,6 +14,7 @@ export class Routes {
     
     public userController: UserController = new UserController();
     public itemController: ItemController = new ItemController();
+    public sliderController: SliderController = new SliderController();
     public businessController: BusinessController = new BusinessController();
     public settingController: SettingController = new SettingController();
     public inMemory: InMemory = new InMemory();
@@ -172,6 +173,17 @@ export class Routes {
         /////    Routes Definition for Business    /////
         ////////////////////////////////////////////////
         app.route('/api/addRFS').post([this.verifyToken, this.inMemory.requestCounter], this.businessController.addItem);
+
+        ////////////////////////////////////////////////
+        /////      Routes Definition Slider       //////
+        ////////////////////////////////////////////////
+
+        app.route('/api/addImage').post(this.sliderController.addImage);
+        app.route('/api/uploadPicture').post(this.sliderController.uploadPicture);
+        app.route('/api/updateImage/:id').post(this.sliderController.updateImage);
+        app.route('/api/getImageById/:id').get(this.sliderController.getImageById);
+        app.route('/api/removeImage/:id').delete(this.sliderController.removeImage);
+        app.route('/api/getImages/:page').post(this.sliderController.getAllSliderImages);
 
     }
 }
